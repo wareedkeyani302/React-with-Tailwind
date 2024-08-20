@@ -2,6 +2,38 @@ import React from 'react';
 import skill from '../../src/Asset/Images/skill.jpg';
 
 const Home = () => {
+    const cardArray=[
+        {
+            id:'1',
+            Cardheading: 'PW Skills Lab',
+            carddescription: 'Supercharge your project development with our robust lab.',
+            cardimage:  <img src='	https://pwskills.com/images/homePage/products-icon1.png' alt='Books' className='h-20 w-20 mb-2' />
+        },
+        {
+            id:'2',
+            Cardheading: 'Job Portal',
+            carddescription: 'Supercharge your project development with our robust lab.',
+            cardimage:  <img src='https://pwskills.com/images/homePage/products-icon4.png' alt='Books' className='h-20 w-20 mb-2' />
+        },
+        {
+            id:'3',
+            Cardheading: 'Experience Portal',
+            carddescription: 'PW Skills self-paced experience portal prioritises hands-on training with 570+ internship projects.',
+            cardimage:   <img src='https://pwskills.com/images/homePage/products-icon2.png' alt='Books' className='h-20 w-20 mb-2' />
+        },
+        {
+            id:'4',
+            Cardheading: 'Affiliate',
+            carddescription: 'Explore Affiliate marketing opportunities with PW Skills and attain financial freedom.',
+            cardimage:  <img src='https://pwskills.com/images/homePage/products-icon5.png' alt='Books' className='h-20 w-20 mb-2' />
+        },
+        {
+            id:'5',
+            Cardheading: 'Hall of Fame',
+            carddescription: 'Our students placements and 100k+ career transitions speak volumes about our courses.',
+            cardimage:  <img src='	https://pwskills.com/images/homePage/products-icon3.png' alt='Books' className='h-20 w-20 mb-2' />
+        },
+    ]
     return (
         <>
             <header className='w-full h-auto'>
@@ -31,37 +63,20 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div class="h-auto w-100 flex flex-wrap flex-col items-center text-center p-10">
-                <div class="w-full h-auto flex flex-wrap flex-col items-center">
-                    <p class="text-indigo-800 font-bold text-3xl md:text-4xl text-center">Our Products</p>
-                    <div class="w-36 h-1 border-b-4 border-yellow-400 mt-3 rounded-2xl md:mt-4 mb-12 "></div>
+            <div className="h-auto w-100 flex flex-wrap flex-col items-center text-center p-10">
+                <div className="w-full h-auto flex flex-wrap flex-col items-center">
+                    <p className="text-indigo-800 font-bold text-3xl md:text-4xl text-center">Our Products</p>
+                    <div className="w-36 h-1 border-b-4 border-yellow-400 mt-3 rounded-2xl md:mt-4 mb-12 "></div>
                 </div>
-                <div class="w-[90%] h-auto flex flex-wrap justify-around">
-                    <div class="w-64 flex flex-col items-center mb-12 border-white border-2 rounded-xl p-2 shadow-xl">
-                        <img src='https://pwskills.com/images/categoryPage/Experts.svg' alt='#' />
-                        <p class="text-3xl font-bold text-white">PW Skills Lab</p>
-                        <p class="text-xl font-bold text-gray-500">Supercharge your project development with our robust lab.</p>
-                    </div>
-                    <div class="w-64 flex flex-col items-center mb-12 p-2">
-                        <img src='	https://pwskills.com/images/categoryPage/Hiring.svg' alt='' />
-                        <p class="text-3xl font-bold text-white">Job Portal</p>
-                        <p class="text-xl font-bold text-gray-500">Supercharge your project development with our robust lab.</p>
-                    </div>
-                    <div class="w-64 flex flex-col items-center mb-12 p-2">
-                        <img src='https://pwskills.com/images/categoryPage/Learners.svg' alt='' />
-                        <p class="text-3xl font-bold text-white">Experience Portal</p>
-                        <p class="text-xl font-bold text-gray-500">PW Skills self-paced experience portal prioritises hands-on training with 570+ internship projects.</p>
-                    </div>
-                    <div class="w-64 flex flex-col items-center mb-12 p-2">
-                        <img src='https://pwskills.com/images/categoryPage/Experts.svg' alt='' />
-                        <p class="text-3xl font-bold text-white">Affiliate</p>
-                        <p class="text-xl font-bold text-gray-500">Explore Affiliate marketing opportunities with PW Skills and attain financial freedom.</p>
-                    </div>
-                    <div class="w-64 flex flex-col items-center mb-12 p-2">
-                        <img src='https://pwskills.com/images/categoryPage/Experts.svg' alt='' />
-                        <p class="text-3xl font-bold text-white">Hall of Fame</p>
-                        <p class="text-xl font-bold text-gray-500">Our students placements and 100k+ career transitions speak volumes about our courses.</p>
-                    </div>
+                <div className=" grid md:grid-cols-3 sm:grid-cols-3 lg:grid-cols-5 justify-around gap-4 container">
+                    {cardArray.map((card, index)=> (
+                     <div className=" flex flex-col items-center mb-12 border-white border-2 rounded-xl p-4 shadow-xl" key={index}>
+                       {card.cardimage}
+                     <p className="text-3xl font-bold text-white">{card.Cardheading}</p>
+                     <p className="text-xl  text-gray-500">{card.carddescription}</p>
+                 </div>
+                    ))}
+                    
                 </div>
             </div>
         </>
